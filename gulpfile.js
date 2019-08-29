@@ -29,15 +29,22 @@ function scss() {
         .pipe(livereload());
 }
 
+function html() {
+    return gulp.src('index.html')
+        .pipe(livereload());
+}
+
 function clean() {
     return del(['dist/css/style.css'])
 }
 
 gulp.task('scss', scss);
+gulp.task('html', html);
 
 function watch() {
     livereload.listen();
     gulp.watch('src/scss/*.scss', scss);
+    gulp.watch('index.html', html);
     // gulp.watch('src/script.js', js);
 }
 
