@@ -1,7 +1,7 @@
-## Scss-gulp-boilerplate
+# Scss-gulp-boilerplate
 Very simple, only SCSS Gulp boilerplate
 
-# devDependencies:
+## devDependencies:
 * gulp-autoprefixer
 * gulp-clean
 * gulp-concat
