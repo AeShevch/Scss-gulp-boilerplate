@@ -5,7 +5,8 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
     concat = require('gulp-concat'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    livereload = require('gulp-livereload');
 
 function scss() {
     return gulp.src(
@@ -24,7 +25,8 @@ function scss() {
         }))
         .pipe(concat("bundle.css"))
         .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/css'))
+        .pipe(livereload());
 }
 
 function clean() {
@@ -34,6 +36,7 @@ function clean() {
 gulp.task('scss', scss);
 
 function watch() {
+    livereload.listen();
     gulp.watch('src/scss/*.scss', scss);
     // gulp.watch('src/script.js', js);
 }
