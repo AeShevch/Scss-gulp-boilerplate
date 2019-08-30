@@ -18,5 +18,8 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
-  }
+  },
+  "browserslist": [
+    "last 4 version"
+  ]
 }
