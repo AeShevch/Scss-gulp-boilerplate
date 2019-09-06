@@ -13,6 +13,7 @@ function scss() {
         [
             'src/scss/*.scss'
         ])
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer())
@@ -24,7 +25,7 @@ function scss() {
             }
         }))
         .pipe(concat("bundle.css"))
-        .pipe(sourcemaps.write('/'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload());
 }
